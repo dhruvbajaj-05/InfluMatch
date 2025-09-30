@@ -1,0 +1,125 @@
+.analytics-dashboard {
+    display: flex;
+    min-height: 100vh;
+    font-family: "Inter", Arial, sans-serif;
+    background: #f6f7fb;
+  }
+  
+  /* SIDEBAR */
+  .sidebar {
+    width: 240px;
+    background-color: #141414;
+    color: #fff;
+    padding: 24px 18px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+  }
+  .profile-pic {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .influencer-name {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+  .sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar-nav li {
+    padding: 10px 6px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .sidebar-nav li.active {
+    background: #1f6feb;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  /* MAIN */
+  .main-content {
+    flex: 1;
+    padding: 28px;
+  }
+  .header h1 {
+    margin: 0 0 14px 0;
+    color: #111827;
+  }
+  
+  /* KPI CARDS */
+  .kpi-cards {
+    display: flex;
+    gap: 14px;
+    margin: 14px 0 22px 0;
+    flex-wrap: wrap;
+  }
+  .card {
+    background: #fff;
+    padding: 14px 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(47,60,80,0.06);
+    flex: 1;
+    min-width: 160px;
+    text-align: center;
+    font-weight: 700;
+    color: #111827;
+  }
+  .card.highlight {
+    background: linear-gradient(90deg, #0ea5e9, #0066ff);
+    color: #fff;
+    font-size: 18px;
+  }
+  
+  /* CHART GRID */
+  .charts {
+    display: flex;
+    gap: 20px;
+  }
+  .three-up { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  .two-up { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .chart {
+    background: #fff;
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(47,60,80,0.04);
+  }
+  .chart.small { min-height: 260px; }
+  .chart.large { min-height: 260px; }
+  
+  /* Bars / top lists */
+  .top-list {
+    list-style: none;
+    padding: 10px 6px 0 6px;
+    margin: 0;
+    color: #374151;
+    font-weight: 600;
+  }
+  .top-list li {
+    margin: 6px 0;
+  }
+  
+  /* button */
+  .btn-primary {
+    background: #0ea5e9;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1000px) {
+    .three-up { grid-template-columns: 1fr; }
+    .two-up { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .analytics-dashboard { display: block; }
+  }
+  
