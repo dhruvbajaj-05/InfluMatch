@@ -1,20 +1,22 @@
 const express = require("express");
-const connectDB = require("./configs/db");
+const mongoose = require("mongoose");
+const cors = require("cors");
 
 const brandRoutes = require("./routes/brandRoutes");
 const compatibilityRoutes = require("./routes/compatibilityRoutes");
-
+const brandAuthRoutes = require("./routes/brandAuthRoutes");
 const app = express();
 
-// Middleware
+app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// DB
-connectDB();
+mongoose.connect("mongodb://127.0.0.1:27017/InfluMatch").then(()=>
+console.log("✅ Connected to MongoDB")).catch((err)=>
+console.log("❌ Connection error:",err));
 
-// Routes
-app.use("/brands", brandRoutes);
-app.use("/compatibility", compatibilityRoutes);
+app.use("/api/brands", brandRoutes);
+app.use("/api/compatibility", compatibilityRoutes);
+app.use("/api/brand-auth", brandAuthRoutes);
 
-const PORT = 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+app.listen(5000,()=> console.log("✅ Server running on port 5000"));
